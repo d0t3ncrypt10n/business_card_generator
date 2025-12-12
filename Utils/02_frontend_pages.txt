@@ -1,0 +1,84 @@
+1️⃣ Home Page
+
+Brief about the product
+
+CTA: “Create Your Digital Card”
+
+Showcase templates
+
+
+
+2️⃣ Login Page
+
+Email
+
+Password
+
+
+
+3️⃣ Register Page
+
+Name
+
+Email
+
+Password
+
+
+
+4️⃣ Dashboard Page
+
+Show user profile
+
+List of business cards created
+
+Buttons: Create Card, Edit, Delete, View
+
+
+
+5️⃣ Create Card Page
+
+Form fields:
+
+Personal details
+
+Professional details
+
+Social media
+
+Upload photo/logo
+
+Template selection
+
+Color & font selection
+
+Live Preview on the right side.
+
+
+
+6️⃣ Edit Card Page
+
+Same as create page but pre-filled data.
+
+
+
+7️⃣ Card Preview Page (Public URL)
+
+Example URL:
+/card/username
+or
+/card/:id
+
+Features:
+
+Show full card
+
+QR code displayed
+
+Share button
+
+Download card
+
+
+
+8️⃣ 404 / Error Page (optional)

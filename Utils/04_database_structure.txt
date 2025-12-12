@@ -1,0 +1,29 @@
+1. Users Collection
+{
+  "name": "",
+  "email": "",
+  "password": "",
+  "avatar": "",
+  "createdAt": ""
+}
+
+
+2. Cards Collection
+{
+  "userId": "",
+  "name": "",
+  "title": "",
+  "company": "",
+  "email": "",
+  "phone": "",
+  "website": "",
+  "location": "",
+  "socialLinks": {},
+  "profileImage": "",
+  "theme": {
+    "color": "",
+    "font": "",
+    "templateId": ""
+  },
+  "createdAt": ""
+}

@@ -1,0 +1,42 @@
+👤 1. User Authentication
+Register
+Login
+Forgot Password (optional)
+
+
+🪪 2. Business Card Creation
+Users can enter:
+Name
+Job title
+Company
+Phone number
+Email
+Website
+Location
+Social links (LinkedIn, Instagram, GitHub, etc.)
+Profile image / company logo
+
+
+🎨 3. Card Customization
+Choose templates
+Pick colors
+Fonts
+Layouts
+Upload images
+
+
+🔗 4. QR Code Generator
+Auto-generate QR linking to the user’s card page
+Allow download PNG / SVG
+
+
+📱 5. Share & Download
+Download business card (PNG/PDF)
+Public URL of business card
+Share via QR, link copy, social media
+
+
+📝 6. User Dashboard
+View all saved cards
+Edit card
+Delete card

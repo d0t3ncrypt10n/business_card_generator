@@ -1,0 +1,31 @@
+🔐 Auth APIs
+Method	    Endpoint	                        Description
+POST	    /api/auth/register	                Register new user
+POST	    /api/auth/login	                    Login user
+GET	        /api/auth/me	                    Get logged-in user (JWT)
+
+
+🪪 Business Card APIs
+Method	    Endpoint	                        Description
+POST	    /api/cards	                        Create new card
+GET	        /api/cards	                        Fetch all cards of logged user
+GET	        /api/cards/:id	                    Fetch a single card
+PUT	        /api/cards/:id	                    Update card
+DELETE	    /api/cards/:id	                    Delete card
+
+
+📸 Media Upload API
+Method	    Endpoint	                        Description
+POST	    /api/upload	                        Upload profile image/logo (use multer or cloudinary)
+
+
+🔳 QR Code API
+Method	    Endpoint	                        Description
+GET	        /api/qrcode/:cardId	                Generate QR code for card URL
+
+(But you can generate QR on frontend also using qrcode.react)
+
+🌍 Public Card API
+Method	    Endpoint	                        Description
+GET	        /api/public/card/:username	        Show public card details
+GET	        /api/public/qrcode/:username	    Show QR code linked to card
