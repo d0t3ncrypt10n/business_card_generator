@@ -1,21 +1,36 @@
-# Digital Business Card Generator
+# 🪪 Digital Business Card Generator
 
-A full-stack web application for creating, customizing, and sharing digital business cards with QR codes.
+A modern, full-stack web application for creating, customizing, and sharing beautiful digital business cards with QR codes, multiple templates, and real-time analytics.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)
 
 ## ✨ Features
 
-- 👤 **User Authentication** - Secure registration and login with JWT
-- 🪪 **Card Creation** - Create unlimited digital business cards
-- 🎨 **Customization** - Multiple colors, fonts, and layouts
-- 📱 **QR Code Generation** - Auto-generate QR codes for easy sharing
-- 🔗 **Public URLs** - Share cards via custom URLs
+- 🔐 **User Authentication** - Secure JWT-based registration and login
+- 🪪 **Multiple Card Templates** - Choose from 3 professionally designed templates
+- 🎨 **Theme Customization** - 6+ color schemes and custom branding
+- 📸 **Profile Images** - Upload and manage profile photos
+- 📊 **Analytics Dashboard** - Track views and shares in real-time
+- 📱 **QR Code Generation** - Auto-generate scannable QR codes
+- 🔗 **Public Sharing** - Share cards via custom URLs
 - 💾 **Export Options** - Download as PNG or PDF
-- 📊 **Dashboard** - Manage all your cards in one place
-- 🔒 **Secure** - Industry-standard security practices
-- 📱 **Responsive** - Works on all devices
+- 🌐 **Social Integration** - Link LinkedIn, GitHub, Instagram, Twitter
+- 📱 **Fully Responsive** - Works seamlessly on all devices
+- ⚡ **Live Preview** - See changes in real-time as you edit
+- 🔒 **Secure & Private** - Industry-standard security practices
+
+## 🎯 Live Demo
+
+- **Frontend:** [Coming Soon]
+- **Backend API:** [Coming Soon]
+
+## 📸 Screenshots
+
+[Add screenshots here after deployment]
 
 ## 🚀 Tech Stack
 
@@ -419,23 +434,28 @@ business-card-generator/
 
 ## 🚀 Deployment
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+### Deploy to Vercel (Recommended)
 
-### Quick Deploy
+This project is optimized for Vercel deployment. See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions.
 
-**Backend** (Heroku, Railway, DigitalOcean)
-```bash
-cd Backend
-npm install
-npm start
-```
+**Quick Steps:**
+1. Push code to GitHub
+2. Import project in Vercel
+3. Deploy Backend (set environment variables)
+4. Deploy Frontend (update API URL)
+5. Done! 🎉
 
-**Frontend** (Vercel, Netlify)
-```bash
-cd Frontend
-npm install
-npm run build
-```
+### Alternative Platforms
+
+**Backend:** Heroku, Railway, DigitalOcean, AWS
+**Frontend:** Netlify, GitHub Pages, Cloudflare Pages
+
+## 📚 Documentation
+
+- [Installation Guide](INSTALLATION.md)
+- [Deployment Guide](DEPLOYMENT_GUIDE.md)
+- [Presentation Script](PRESENTATION_SCRIPT.md)
+- [Security Guidelines](SECURITY.md)
 
 ## 🧪 Testing
 
@@ -463,38 +483,38 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for de
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🐛 Known Issues
-
-- None currently
-
 ## 🗺️ Roadmap
 
-- [ ] Multiple card templates
-- [ ] Card analytics and views tracking
-- [ ] Team/organization features
-- [ ] vCard export
-- [ ] Email signature generation
-- [ ] Dark mode
-- [ ] Internationalization (i18n)
+- [x] User authentication system
+- [x] Multiple card templates (3 designs)
+- [x] View and share analytics
+- [x] QR code generation
+- [x] PNG/PDF export
+- [x] Social media integration
+- [ ] More templates (10+ designs)
+- [ ] Custom domain support
+- [ ] Advanced analytics with graphs
+- [ ] Team/organization accounts
+- [ ] NFC tag integration
+- [ ] Apple Wallet / Google Pay
+- [ ] Custom fonts
+- [ ] Video backgrounds
+- [ ] Email signature generator
 - [ ] Mobile app (React Native)
 
 ## 📧 Contact
 
-- GitHub: [@your-username](https://github.com/your-username)
-- Email: your-email@example.com
+- **GitHub:** [@d0t3ncrypt10n](https://github.com/d0t3ncrypt10n)
+- **Repository:** [business_card_generator](https://github.com/d0t3ncrypt10n/business_card_generator)
 
 ## 🙏 Acknowledgments
 
 - React team for the amazing framework
-- MongoDB for the database
-- All contributors who helped build this project
-
-## 📊 Stats
-
-![GitHub stars](https://img.shields.io/github/stars/your-username/business-card-generator)
-![GitHub forks](https://img.shields.io/github/forks/your-username/business-card-generator)
-![GitHub issues](https://img.shields.io/github/issues/your-username/business-card-generator)
+- MongoDB Atlas for cloud database
+- Vercel for seamless deployment
+- Material Symbols for beautiful icons
+- All open-source contributors
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/your-username)
+**Made with ❤️ for modern networking**
