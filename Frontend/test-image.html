@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+</head>
+<body>
+    <h1>Image URL Test</h1>
+    
+    <h2>Test 1: Direct URL</h2>
+    <img src="http://localhost:5000/uploads/1766003476037-Picsart_23-03-03_20-23-46-167.png" 
+         style="width: 200px; height: 200px; object-fit: cover; border: 2px solid green;"
+         onload="console.log('Test 1: Image loaded successfully')"
+         onerror="console.error('Test 1: Image failed to load')">
+    
+    <h2>Test 2: Relative Path (should fail)</h2>
+    <img src="/uploads/1766003476037-Picsart_23-03-03_20-23-46-167.png" 
+         style="width: 200px; height: 200px; object-fit: cover; border: 2px solid red;"
+         onload="console.log('Test 2: Image loaded successfully')"
+         onerror="console.error('Test 2: Image failed to load')">
+    
+    <h2>Test 3: Check BASE_URL</h2>
+    <div id="config"></div>
+    
+    <script type="module">
+        import { BASE_URL, API_URL } from './src/config/api.js';
+        document.getElementById('config').innerHTML = `
+            <p><strong>API_URL:</strong> ${API_URL}</p>
+            <p><strong>BASE_URL:</strong> ${BASE_URL}</p>
+            <p><strong>Full Image URL:</strong> ${BASE_URL}/uploads/1766003476037-Picsart_23-03-03_20-23-46-167.png</p>
+        `;
+        
+        // Test the constructed URL
+        const testImg = document.createElement('img');
+        testImg.src = `${BASE_URL}/uploads/1766003476037-Picsart_23-03-03_20-23-46-167.png`;
+        testImg.style.cssText = 'width: 200px; height: 200px; object-fit: cover; border: 2px solid blue;';
+        testImg.onload = () => console.log('Test 3: Constructed URL loaded successfully');
+        testImg.onerror = () => console.error('Test 3: Constructed URL failed to load');
+        document.body.appendChild(testImg);
+    </script>
+</body>
+</html>

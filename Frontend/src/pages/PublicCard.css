@@ -1,0 +1,700 @@
+/* Public Card Styles - Dark Theme */
+.public-wrapper {
+  min-height: 100vh;
+  background: #102217;
+  padding: 6rem 1rem 2rem 1rem; /* Added top padding to avoid navbar overlap */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient Blobs */
+.ambient-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: #2bee79;
+  top: -250px;
+  left: -250px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: #14b8a6;
+  bottom: -200px;
+  right: -200px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.blob-3 {
+  width: 350px;
+  height: 350px;
+  background: #06b6d4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 30s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.public-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading State */
+.public-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #102217;
+  color: white;
+}
+
+.public-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #2bee79;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.public-loading p {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* Error State */
+.public-error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #102217;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-icon {
+  font-size: 5rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.public-error h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.public-error p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* Business Card Preview - Larger Version */
+.card-preview-large {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-out;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-preview-large #business-card {
+  width: 100%;
+}
+
+.card-preview-large .template-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.business-card-display {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 1.586/1;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
+}
+
+.business-card-display:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+}
+
+.business-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s;
+}
+
+.business-card-display:hover .business-card-bg {
+  transform: scale(1.05);
+}
+
+.business-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.business-card-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.business-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.business-profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.business-profile-img,
+.business-profile-placeholder {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.business-profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.business-profile-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px dashed rgba(255, 255, 255, 0.3);
+}
+
+.business-profile-placeholder .material-symbols-outlined {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.business-profile-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.25rem;
+}
+
+.business-card-name {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.business-card-title {
+  color: #2bee79;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.business-card-company {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin: 0.25rem 0 0 0;
+  font-weight: 500;
+}
+
+.business-card-location {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.location-icon {
+  font-size: 1.1rem !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.business-card-bio-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.business-card-bio {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.business-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.business-card-socials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.business-social-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.business-social-icon:hover {
+  transform: scale(1.15);
+}
+
+.business-social-icon .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+.business-social-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.business-social-mail {
+  background: white;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.business-social-call {
+  background: rgba(34, 197, 94, 0.25);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.business-social-link {
+  background: rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.business-social-linkedin {
+  background: rgba(14, 165, 233, 0.25);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.business-social-github {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Details and Social Sections */
+.details-section,
+.social-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title .material-symbols-outlined {
+  font-size: 1.25rem;
+  color: #2bee79;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #2bee79;
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #2bee79;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  color: white;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+/* Social Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.social-link .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.social-linkedin {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.social-linkedin:hover {
+  background: rgba(14, 165, 233, 0.25);
+  border-color: #38bdf8;
+  transform: translateY(-3px);
+}
+
+.social-github {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-github:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+.social-instagram {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+  border-color: rgba(244, 114, 182, 0.2);
+}
+
+.social-instagram:hover {
+  background: rgba(236, 72, 153, 0.25);
+  border-color: #f472b6;
+  transform: translateY(-3px);
+}
+
+.social-twitter {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+.social-twitter:hover {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: #60a5fa;
+  transform: translateY(-3px);
+}
+
+/* QR Section */
+.qr-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.7s ease-out;
+}
+
+.qr-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.qr-title .material-symbols-outlined {
+  font-size: 1.5rem;
+  color: #2bee79;
+}
+
+.qr-wrapper {
+  display: inline-block;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.qr-image {
+  width: 250px;
+  height: 250px;
+  display: block;
+}
+
+.qr-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.action-btn .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+.action-btn-primary {
+  background: #2bee79;
+  color: black;
+  border-color: #2bee79;
+  box-shadow: 0 0 20px rgba(43, 238, 121, 0.3);
+}
+
+.action-btn-primary:hover {
+  background: rgba(43, 238, 121, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(43, 238, 121, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .public-wrapper {
+    padding: 5rem 1rem 2rem 1rem;
+  }
+
+  .business-card-content {
+    padding: 1.75rem;
+  }
+
+  .business-profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .business-profile-img,
+  .business-profile-placeholder {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .business-profile-info {
+    align-items: center;
+  }
+
+  .business-card-name {
+    font-size: 1.75rem;
+  }
+
+  .business-card-title {
+    font-size: 1rem;
+  }
+
+  .business-card-company {
+    font-size: 0.9rem;
+  }
+
+  .business-card-location {
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .business-card-bio {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .business-card-socials {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .business-social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .business-social-icon .material-symbols-outlined {
+    font-size: 1.25rem;
+  }
+
+  .business-social-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .details-section,
+  .social-section,
+  .qr-section {
+    padding: 1.5rem;
+  }
+
+  .qr-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+}

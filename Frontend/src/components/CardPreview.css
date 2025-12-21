@@ -1,0 +1,262 @@
+/* Card Preview Styles - Improved Layout */
+.card-preview-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.586/1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+}
+
+.card-preview-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.card-preview-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s;
+}
+
+.card-preview-wrapper:hover .card-preview-bg {
+  transform: scale(1.05);
+}
+
+.card-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.card-preview-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.card-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-preview-profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card-preview-profile-img,
+.card-preview-profile-placeholder {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.card-preview-profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-preview-profile-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.card-preview-profile-placeholder .material-symbols-outlined {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-preview-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.15rem;
+}
+
+.card-preview-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.card-preview-title {
+  color: #2bee79;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.card-preview-company {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  margin: 0.15rem 0 0 0;
+  font-weight: 500;
+}
+
+.card-preview-location {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.7rem;
+  margin: 0.15rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.location-icon {
+  font-size: 0.875rem !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-preview-bio-section {
+  margin-top: -0.5rem;
+}
+
+.card-preview-bio {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.card-preview-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.card-preview-socials {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.social-icon-mini {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.social-icon-mini:hover {
+  transform: scale(1.15);
+}
+
+.social-icon-mini .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.social-svg-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.social-icon-mail {
+  background: white;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon-call {
+  background: rgba(34, 197, 94, 0.25);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.social-icon-link {
+  background: rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.social-icon-linkedin {
+  background: rgba(14, 165, 233, 0.25);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.social-icon-github {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-preview-content {
+    padding: 1.25rem;
+  }
+
+  .card-preview-profile-img,
+  .card-preview-profile-placeholder {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .card-preview-name {
+    font-size: 1.25rem;
+  }
+  
+  .card-preview-title {
+    font-size: 0.75rem;
+  }
+  
+  .card-preview-company {
+    font-size: 0.7rem;
+  }
+
+  .card-preview-location {
+    font-size: 0.65rem;
+  }
+
+  .card-preview-bio {
+    font-size: 0.7rem;
+  }
+
+  .social-icon-mini {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .social-icon-mini .material-symbols-outlined {
+    font-size: 1rem;
+  }
+
+  .social-svg-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
