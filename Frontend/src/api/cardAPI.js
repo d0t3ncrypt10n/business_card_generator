@@ -88,6 +88,15 @@ export const incrementCardShare = async (id) => {
   }
 };
 
+export const getAllPublicCards = async () => {
+  try {
+    const { data } = await axios.get(`${API_URL}/cards/browse`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const uploadImage = async (file) => {
   try {
     // Validate file size (5MB max)

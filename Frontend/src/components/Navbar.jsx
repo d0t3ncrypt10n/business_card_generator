@@ -19,6 +19,13 @@ const Navbar = () => {
         <div className="navbar-links">
           {user ? (
             <>
+              <Link 
+                to="/browse" 
+                className={`nav-link ${isActive('/browse') ? 'nav-link-active' : ''}`}
+              >
+                <span className="material-symbols-outlined">explore</span>
+                Browse Cards
+              </Link>
               <span className="user-greeting">👋 {user.name}</span>
               <Link 
                 to="/dashboard" 
@@ -33,6 +40,13 @@ const Navbar = () => {
             </>
           ) : (
             <>
+              <Link 
+                to="/browse" 
+                className={`nav-link ${isActive('/browse') ? 'nav-link-active' : ''}`}
+              >
+                <span className="material-symbols-outlined">explore</span>
+                Browse Cards
+              </Link>
               <Link 
                 to="/login" 
                 className={`nav-link ${isActive('/login') ? 'nav-link-active' : ''}`}

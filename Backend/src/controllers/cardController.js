@@ -131,3 +131,16 @@ export const incrementCardShare = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const getAllPublicCards = async (req, res) => {
+  try {
+    const cards = await Card.find()
+      .populate('userId', 'name')
+      .sort({ createdAt: -1 })
+      .limit(100); // Limit to 100 cards for performance
+    
+    res.json(cards);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

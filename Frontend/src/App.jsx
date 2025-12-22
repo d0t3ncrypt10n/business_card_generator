@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import CreateCard from './pages/CreateCard';
 import EditCard from './pages/EditCard';
 import PublicCard from './pages/PublicCard';
+import BrowseCards from './pages/BrowseCards';
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {
@@ -50,6 +51,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/browse" element={<BrowseCards />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/create-card" element={<ProtectedRoute><CreateCard /></ProtectedRoute>} />
         <Route path="/edit-card/:id" element={<ProtectedRoute><EditCard /></ProtectedRoute>} />
