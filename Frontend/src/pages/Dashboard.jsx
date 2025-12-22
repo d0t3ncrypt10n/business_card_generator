@@ -105,7 +105,6 @@ const Dashboard = () => {
         <section className="cards-section">
           <div className="cards-header">
             <h3 className="cards-title">Your Cards</h3>
-            <button className="view-all-btn">View All</button>
           </div>
 
           {cards.length === 0 ? (
