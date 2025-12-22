@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import helmet from 'helmet';
 import mongoSanitize from 'express-mongo-sanitize';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
@@ -23,10 +22,6 @@ const app = express();
 connectDB();
 
 // Security middleware
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" },
-  crossOriginEmbedderPolicy: false
-}));
 app.use(mongoSanitize());
 
 // CORS configuration
