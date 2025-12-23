@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 import './Home.css';
 
 const Home = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="home-wrapper">
       {/* Ambient Background Effects */}
@@ -29,10 +33,10 @@ const Home = () => {
           </p>
           
           <div className="hero-cta">
-            <Link to="/register" className="btn-primary">
+            <Link to={user ? "/dashboard" : "/register"} className="btn-primary">
               Get Started Free
             </Link>
-            <Link to="/login" className="btn-secondary">
+            <Link to={user ? "/dashboard" : "/login"} className="btn-secondary">
               <span className="material-symbols-outlined">login</span>
               Sign In
             </Link>
@@ -215,7 +219,7 @@ const Home = () => {
             <div className="cta-content">
               <h2 className="cta-title">Ready to upgrade?</h2>
               <p className="cta-subtitle">Join the future of networking today.</p>
-              <Link to="/register" className="cta-button">
+              <Link to={user ? "/dashboard" : "/register"} className="cta-button">
                 Get Started for Free
               </Link>
               <p className="cta-note">No credit card required</p>
