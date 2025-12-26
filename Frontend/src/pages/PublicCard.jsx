@@ -64,7 +64,10 @@ const PublicCard = () => {
     const element = document.getElementById('business-card');
     const canvas = await html2canvas(element, {
       scale: 2,
-      backgroundColor: '#102217'
+      backgroundColor: '#102217',
+      useCORS: true,
+      allowTaint: true,
+      logging: false
     });
     const link = document.createElement('a');
     link.download = `${card.name}-business-card.png`;
@@ -76,7 +79,10 @@ const PublicCard = () => {
     const element = document.getElementById('business-card');
     const canvas = await html2canvas(element, {
       scale: 2,
-      backgroundColor: '#102217'
+      backgroundColor: '#102217',
+      useCORS: true,
+      allowTaint: true,
+      logging: false
     });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF({
