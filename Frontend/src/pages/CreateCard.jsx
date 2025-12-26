@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CardPreview from '../components/CardPreview';
 import * as cardAPI from '../api/cardAPI';
 import { BASE_URL } from '../config/api';
+import { businessTypes } from '../utils/businessTypes';
 import './EditCard.css'; // Reuse the same CSS
 
 const CreateCard = () => {
@@ -12,6 +13,7 @@ const CreateCard = () => {
     bio: '',
     title: '',
     company: '',
+    businessType: '',
     location: '',
     email: '',
     website: '',
@@ -212,6 +214,29 @@ const CreateCard = () => {
                 <span className="material-symbols-outlined expand-icon">expand_more</span>
               </summary>
               <div className="accordion-content">
+                <label className="form-label">
+                  <span className="label-text">Business Type</span>
+                  <div className="input-wrapper">
+                    <span className="material-symbols-outlined input-icon">category</span>
+                    <select 
+                      name="businessType" 
+                      value={formData.businessType || ''} 
+                      onChange={handleChange} 
+                      className="form-input form-select"
+                    >
+                      <option value="">Select Business Type</option>
+                      {businessTypes.map((category) => (
+                        <optgroup key={category.category} label={category.category}>
+                          {category.types.map((type) => (
+                            <option key={type.value} value={type.value}>
+                              {type.label}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
+                  </div>
+                </label>
                 <div className="form-row">
                   <label className="form-label">
                     <span className="label-text">Job Title</span>

@@ -475,6 +475,26 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+.form-select option {
+  background: #1a2720;
+  color: white;
+}
+
+.form-select optgroup {
+  background: #0f1a14;
+  color: #2bee79;
+  font-weight: 600;
+}
+
 .input-verified {
   position: relative;
 }
