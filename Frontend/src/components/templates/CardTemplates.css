@@ -67,6 +67,20 @@
   font-weight: 500;
 }
 
+.template-business-type {
+  color: #2bee79;
+  font-size: 0.8rem;
+  margin: 0.35rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+}
+
+.template-business-type .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
 .template-location {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;

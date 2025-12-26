@@ -252,14 +252,10 @@ const EditCard = () => {
                       className="form-input form-select"
                     >
                       <option value="">Select Business Type</option>
-                      {businessTypes.map((category) => (
-                        <optgroup key={category.category} label={category.category}>
-                          {category.types.map((type) => (
-                            <option key={type.value} value={type.value}>
-                              {type.label}
-                            </option>
-                          ))}
-                        </optgroup>
+                      {businessTypes.map((type) => (
+                        <option key={type.value} value={type.value}>
+                          {type.label}
+                        </option>
                       ))}
                     </select>
                   </div>
