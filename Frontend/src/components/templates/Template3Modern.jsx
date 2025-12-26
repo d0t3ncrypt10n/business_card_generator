@@ -43,14 +43,15 @@ const Template3Modern = ({ cardData }) => {
 
         {/* Right Side - Title & Company */}
         <div className="modern-info">
-          <p className="template-title modern-title" style={{ color: themeColor }}>{title || 'Job Title'}</p>
+          <p className="template-title modern-title" style={{ color: themeColor }}>
+            {businessTypeData && (
+              <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', marginRight: '0.35rem', verticalAlign: 'middle' }}>
+                {businessTypeData.icon}
+              </span>
+            )}
+            {title || 'Job Title'}
+          </p>
           {company && <p className="template-company">{company}</p>}
-          {businessTypeData && (
-            <p className="template-business-type" style={{ color: themeColor }}>
-              <span className="material-symbols-outlined">{businessTypeData.icon}</span>
-              {businessTypeData.label}
-            </p>
-          )}
           {location && (
             <p className="template-location">
               <span className="material-symbols-outlined">location_on</span>

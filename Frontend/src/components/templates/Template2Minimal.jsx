@@ -40,14 +40,15 @@ const Template2Minimal = ({ cardData }) => {
         {/* Info */}
         <div className="minimal-info">
           <h2 className="template-name">{name || 'Your Name'}</h2>
-          <p className="template-title" style={{ color: themeColor }}>{title || 'Job Title'}</p>
+          <p className="template-title" style={{ color: themeColor }}>
+            {businessTypeData && (
+              <span className="material-symbols-outlined" style={{ fontSize: '1rem', marginRight: '0.35rem', verticalAlign: 'middle' }}>
+                {businessTypeData.icon}
+              </span>
+            )}
+            {title || 'Job Title'}
+          </p>
           {company && <p className="template-company">{company}</p>}
-          {businessTypeData && (
-            <p className="template-business-type" style={{ color: themeColor }}>
-              <span className="material-symbols-outlined">{businessTypeData.icon}</span>
-              {businessTypeData.label}
-            </p>
-          )}
           {location && (
             <p className="template-location">
               <span className="material-symbols-outlined">location_on</span>
