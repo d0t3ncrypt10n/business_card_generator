@@ -24,6 +24,8 @@ export const getCards = async (req, res) => {
 export const getCardById = async (req, res) => {
   try {
     const card = await Card.findById(req.params.id);
+    console.log(`1 . ${card.userId.toString()}`);
+    console.log(`2 . ${req.user._id.toString()}`);
     
     if (!card) {
       return res.status(404).json({ message: 'Card not found' });
@@ -83,6 +85,7 @@ export const deleteCard = async (req, res) => {
 };
 
 export const getPublicCard = async (req, res) => {
+  console.log(`Fetching public card with ID: ${req.params.id}`);
   try {
     const card = await Card.findById(req.params.id).populate('userId', 'name');
     
@@ -127,6 +130,19 @@ export const incrementCardShare = async (req, res) => {
     await card.save();
 
     res.json({ shares: card.shares });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const getAllPublicCards = async (req, res) => {
+  try {
+    const cards = await Card.find()
+      .populate('userId', 'name')
+      .sort({ createdAt: -1 })
+      .limit(100); // Limit to 100 cards for performance
+    
+    res.json(cards);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

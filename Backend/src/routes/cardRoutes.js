@@ -7,7 +7,8 @@ import {
   deleteCard,
   getPublicCard,
   incrementCardView,
-  incrementCardShare
+  incrementCardShare,
+  getAllPublicCards
 } from '../controllers/cardController.js';
 import { protect } from '../middleware/authMiddleware.js';
 import { validateCard } from '../middleware/validation.js';
@@ -17,6 +18,8 @@ const router = express.Router();
 router.route('/')
   .post(protect, validateCard, createCard)
   .get(protect, getCards);
+
+router.get('/browse', getAllPublicCards);
 
 router.route('/:id')
   .get(protect, getCardById)

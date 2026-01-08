@@ -1,10 +1,13 @@
 // Template 3: Modern Asymmetric - Diagonal Split
 import { BASE_URL } from '../../config/api';
+import { getBusinessType } from '../../utils/businessTypes';
 import './CardTemplates.css';
 
 const Template3Modern = ({ cardData }) => {
-  const { name, title, company, email, phone, website, socialLinks, profileImage, theme, bio, location } = cardData;
+  const { name, title, company, email, phone, website, socialLinks, profileImage, theme, bio, location, businessType } = cardData;
   const themeColor = theme?.color || '#2bee79';
+  
+  const businessTypeData = businessType ? getBusinessType(businessType) : null;
 
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null;
@@ -40,7 +43,14 @@ const Template3Modern = ({ cardData }) => {
 
         {/* Right Side - Title & Company */}
         <div className="modern-info">
-          <p className="template-title modern-title" style={{ color: themeColor }}>{title || 'Job Title'}</p>
+          <p className="template-title modern-title" style={{ color: themeColor }}>
+            {businessTypeData && (
+              <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', marginRight: '0.35rem', verticalAlign: 'middle' }}>
+                {businessTypeData.icon}
+              </span>
+            )}
+            {title || 'Job Title'}
+          </p>
           {company && <p className="template-company">{company}</p>}
           {location && (
             <p className="template-location">

@@ -23,6 +23,10 @@ const cardSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  businessType: {
+    type: String,
+    default: ''
+  },
   email: {
     type: String,
     required: true

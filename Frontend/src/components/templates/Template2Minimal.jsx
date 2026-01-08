@@ -1,10 +1,13 @@
 // Template 2: Minimalist Center - Centered Vertical
 import { BASE_URL } from '../../config/api';
+import { getBusinessType } from '../../utils/businessTypes';
 import './CardTemplates.css';
 
 const Template2Minimal = ({ cardData }) => {
-  const { name, title, company, email, phone, website, socialLinks, profileImage, theme, bio, location } = cardData;
+  const { name, title, company, email, phone, website, socialLinks, profileImage, theme, bio, location, businessType } = cardData;
   const themeColor = theme?.color || '#2bee79';
+  
+  const businessTypeData = businessType ? getBusinessType(businessType) : null;
 
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null;
@@ -37,7 +40,14 @@ const Template2Minimal = ({ cardData }) => {
         {/* Info */}
         <div className="minimal-info">
           <h2 className="template-name">{name || 'Your Name'}</h2>
-          <p className="template-title" style={{ color: themeColor }}>{title || 'Job Title'}</p>
+          <p className="template-title" style={{ color: themeColor }}>
+            {businessTypeData && (
+              <span className="material-symbols-outlined" style={{ fontSize: '1rem', marginRight: '0.35rem', verticalAlign: 'middle' }}>
+                {businessTypeData.icon}
+              </span>
+            )}
+            {title || 'Job Title'}
+          </p>
           {company && <p className="template-company">{company}</p>}
           {location && (
             <p className="template-location">

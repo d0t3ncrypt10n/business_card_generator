@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import helmet from 'helmet';
 import mongoSanitize from 'express-mongo-sanitize';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
@@ -23,10 +22,6 @@ const app = express();
 connectDB();
 
 // Security middleware
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" },
-  crossOriginEmbedderPolicy: false
-}));
 app.use(mongoSanitize());
 
 // CORS configuration
@@ -41,8 +36,13 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Static files
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+// Static files with CORS headers for html2canvas
+app.use('/uploads', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+}, express.static(path.join(__dirname, '../uploads')));
 
 // API routes
 app.use('/api/auth', authRoutes);

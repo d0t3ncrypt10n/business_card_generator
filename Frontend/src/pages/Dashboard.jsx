@@ -101,26 +101,10 @@ const Dashboard = () => {
           </Link>
         </section>
 
-        {/* Search & Filter */}
-        <section className="search-section">
-          <div className="search-wrapper">
-            <span className="material-symbols-outlined search-icon">search</span>
-            <input 
-              type="text" 
-              placeholder="Search cards..." 
-              className="search-input"
-            />
-          </div>
-          <button className="filter-btn">
-            <span className="material-symbols-outlined">filter_list</span>
-          </button>
-        </section>
-
         {/* Cards Grid */}
         <section className="cards-section">
           <div className="cards-header">
             <h3 className="cards-title">Your Cards</h3>
-            <button className="view-all-btn">View All</button>
           </div>
 
           {cards.length === 0 ? (
